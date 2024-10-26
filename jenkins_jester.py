@@ -37,15 +37,11 @@ def jenkins_response(value):
             "Oh dear, oh dear… not good at all.",
             "Zero points! You must be joking!",
         ],
-}
+    }
 
     print(
-        Fore.RED
-        + "Jenkins Jester: "
-        + Style.RESET_ALL
-        + random.choice(response[value])
+        Fore.RED + "Jenkins Jester: " + Style.RESET_ALL + random.choice(response[value])
     )
-
 
 
 def jenkins_says(phrase):

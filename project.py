@@ -1,5 +1,5 @@
 from pyfiglet import Figlet
-from asciiart import magart, warart, jesterart, manart, map, side_by_side_hero
+from asciiart import magart, warart, side_by_side_hero
 from maths_room import (
     get_level,
     generate_problem,
@@ -7,14 +7,15 @@ from maths_room import (
     calculate_answer,
     maths_room,
 )
-from hangman_room import hangman_room, get_word, draw_man
-from hangmanart import hang_1, hang_2, hang_3, hang_4, hang_5, hang_6, hang_7
-from not_wordle_room import not_wordle_room, get_word, guess_word
+# from hangman_room import hangman_room, get_word, draw_man
+# from hangmanart import hang_1, hang_2, hang_3, hang_4, hang_5, hang_6, hang_7
+from not_wordle_room import not_wordle_room
 from heros import Hero, Mage, Warrior
 from colorama import Fore, Back, Style
 import random
 import time
 from jenkins_jester import jenkins_response, jenkins_says
+import regex_room
 
 # print(Fore.RED + 'some red text')
 # print(Back.GREEN + 'and with a green background')
@@ -32,7 +33,6 @@ def main():
     time.sleep(1)
     print(my_hero)
     print(my_hero.special_move(), "\n")
-    jenkins_says("HELLOLOOOO")
     print(
         jenkins_says(
             "OK Okay! Well roll the dice then, lets see what grusome mystery awaits you!"

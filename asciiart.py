@@ -20,6 +20,7 @@ def magart():
 ~~~~~~~~~~~Mage~~~~~~~~~~~~~~~
 """
 
+
 def jesterart(score):
     return r"""
         ______________________     Q
@@ -34,7 +35,6 @@ def jesterart(score):
                  '---'q__/.'__ ;    /     \\_
                       '---'     '--'       `"'
 """
-
 
 
 def warart():
@@ -67,6 +67,7 @@ def warart():
                     Warrior
 '''
 
+
 def manart():
     return r"""
      O
@@ -77,8 +78,7 @@ def manart():
 
 def map():
 
-
-    return r'''
+    return r"""
   |   |
   |   | Entrance
  _\___\___________      _______________    _______________
@@ -102,13 +102,14 @@ def map():
 |   Git Golem   |----|   Empty Room  |----|   Boss Room  |
 |     🐉        |    |               |    |     👑 Boss  |
 |_______________|    |_______________|    |_______________|
-'''
+"""
+
 
 def side_by_side_hero(art1, art2):
     lines1 = art1.splitlines()
     lines2 = art2.splitlines()
     max_lines = max(len(lines1), len(lines2))
     for i in range(max_lines):
-        line1 = lines1[i] if i < len(lines1) else ''
-        line2 = lines2[i] if i < len(lines2) else ''
+        line1 = lines1[i] if i < len(lines1) else ""
+        line2 = lines2[i] if i < len(lines2) else ""
         print(f"{line1:<60} {line2}")
