@@ -8,40 +8,44 @@ def jenkins_response(value):
     print(jesterart(value))
     response = {
         5: [
-            "A perfect 5! Well i doubt you will be so lucky next time!",
-            "LOL GOOD ONE",
-            "NICEEE",
+            "A perfect 5! Well, I doubt you'll be so lucky next time!",
+            "Flawless victory! But don’t get too comfortable.",
+            "Hmm… beginner’s luck, perhaps?",
         ],
-        4: ["Theres always room for improvement.."],
-        3: ["Average.. thats what you are little one.. distinctly average!"],
-        2: ["YOU SCORED 2"],
-        1: ["YOU SCORED 1"],
-        0: ["Thats just pathetic", "Oh dear, oh dear.. not good"],
-    }
-    # more options needed
-    if value > 3:
-        print(
-            Fore.RED + "Jenkins Jester: " + Style.RESET_ALL + "heHeheHe.. You're good!"
-        )
-        print(
-            Fore.RED
-            + "Jenkins Jester: "
-            + Style.RESET_ALL
-            + random.choice(response[value])
-        )
-    else:
-        print(
-            Fore.RED
-            + "Jenkins Jester: "
-            + Style.RESET_ALL
-            + "uhh ohh, you're in trouble!!"
-        )
-        print(
-            Fore.RED
-            + "Jenkins Jester: "
-            + Style.RESET_ALL
-            + random.choice(response[value])
-        )
+        4: [
+            "Not bad, not bad. But can you keep it up?",
+            "Solid effort! You might just be worthy of my time.",
+            "4 points? You're getting warmer, I suppose.",
+        ],
+        3: [
+            "Average… distinctly average!",
+            "A mere 3? I expected something… more.",
+            "Middle of the road, just like I thought!",
+        ],
+        2: [
+            "A meager 2? I almost feel sorry for you… almost.",
+            "Is that all? 2 points? Pity.",
+            "I've seen better… much better.",
+        ],
+        1: [
+            "A single point? This is laughable!",
+            "One lonely point… how sad.",
+            "That’s it? Just 1? Pathetic!",
+        ],
+        0: [
+            "That’s just pathetic.",
+            "Oh dear, oh dear… not good at all.",
+            "Zero points! You must be joking!",
+        ],
+}
+
+    print(
+        Fore.RED
+        + "Jenkins Jester: "
+        + Style.RESET_ALL
+        + random.choice(response[value])
+    )
+
 
 
 def jenkins_says(phrase):
