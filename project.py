@@ -1,12 +1,7 @@
 from pyfiglet import Figlet
 from asciiart import magart, warart, side_by_side_hero
-from maths_room import (
-    get_level,
-    generate_problem,
-    get_user_answer,
-    calculate_answer,
-    maths_room,
-)
+from maths_room import maths_room
+
 # from hangman_room import hangman_room, get_word, draw_man
 # from hangmanart import hang_1, hang_2, hang_3, hang_4, hang_5, hang_6, hang_7
 from not_wordle_room import not_wordle_room
@@ -17,12 +12,11 @@ import time
 from jenkins_jester import jenkins_response, jenkins_says
 import regex_room
 
-# print(Fore.RED + 'some red text')
-# print(Back.GREEN + 'and with a green background')
-# print(Style.RESET_ALL) resets all style
+
 
 
 def main():
+
     print(jenkins_says("Hello"))
     title = "Devops Dungeon"
     print(game_title(title))
@@ -44,7 +38,7 @@ def main():
         )
     )
     while roll != "roll":
-        roll = input(">>")
+        roll = input(my_hero.input())
     print(roll_dice())
     time.sleep(1)
     maths_score = maths_room()
@@ -57,10 +51,9 @@ def main():
     )
     roll = ""
     while roll != "roll":
-        roll = input(">>")
+        roll = input(my_hero.input())
     print(roll_dice())
     time.sleep(1)
-
     wordle_score = not_wordle_room()
     jenkins_response(wordle_score)
 
@@ -95,7 +88,6 @@ def game_setup():
             )
         if not all(char.isalpha() or char.isspace() for char in name):
             raise ValueError("Please use only letters and spaces in your hero's name")
-
     print(f"Welcome {name}.. are you ready for the adventure of a lifetime?")
     side_by_side_hero(warart(), magart())
     hero = ""
@@ -105,8 +97,9 @@ def game_setup():
     special = input(f"What is your special skill {name}? ")
     print(f"Ohh yes... i like it! good choice hero!\n")
     # return name of hero, which hero the player chose and empty string to initialise roll= ""
+    # input_name = print(my_hero.__class__.__name__)
     return ({"name": name, "hero": hero, "special": special}, "")
-
+ 
 
 def build_hero(name, hero, special):
     match hero:

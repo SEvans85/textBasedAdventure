@@ -16,6 +16,9 @@ class Hero:
             f"{self.name} unleashes their special move! \n\t~~-->>{self.special}<<--~~"
         )
 
+    def input(self):
+        return f"({self.__class__.__name__}) {self.name} ->  "
+
     def backpack(self): ...
 
 
