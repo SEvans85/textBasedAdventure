@@ -1,5 +1,4 @@
 # DevOps Dungeon
-#### Video Demo:  <URL HERE>
 #### Description:
 My project is named Devops Dungeon. I myself am a DevOps Apprentice almost one year on the job. I was struggling to think of an idea for my final project for CS50P.
 I decided to create a text based adventure game, as i thought it would be easy to implement different skills i'd learnt into one project. It also convenient to add more features and 'rooms' as i see fit, meaning its infinitely extensible.
@@ -28,7 +27,7 @@ I originally had each 'room' has one function, but i quickly found this made it 
 Another problem i had was that new ideas kept coming to me as i was coding, or even when i was out for a walk. This meant the scope of the project just kept growing out of control. I would also bounce between one part of the project and another:
 This had its pros and cons, because on one hand i could keep coding in another area when i had struggles with one part of the code. But the downside was i had alot of unfinished bits of code at one point and it made running / testing it troublesome.
 
-## puzzles
+## Puzzles
 ### maths_room
 User enters a desired level 1 - 5. The program will return maths questions using operators // % * and +, using ints in the range of the level entered by the player. I.E Level 1: 9 + 9, Level 2: 99 % 33 , Level 3: 960 // 20
 The user will be asked 5 questions total and at the end of it will receive a score between 1 and 5, based on amount correct answers they entered.
