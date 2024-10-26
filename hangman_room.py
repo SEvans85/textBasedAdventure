@@ -5,14 +5,23 @@ from pyfiglet import Figlet
 from colorama import Fore, Back, Style
 import time
 
-#let user choose kind of word they want
-#ascii hangman after each guess
-#print chosen topic in figlet
+# logic for revealing letters: pass in idden work, return word with "_" for letter than isnt matching then letter for matching
+
 
 def hangman_room():
     guesses = 0
-    word = input(Fore.BLUE + "Terraform Titan: " + Style.RESET_ALL + "Ohh there you are... I hear you like DevOps? Whats your favourite tool? ")
-    print(Fore.BLUE + "Terraform Titan: " + Style.RESET_ALL + "I see.. welcome to.. *drum roll please*.. ")
+    word = input(
+        Fore.BLUE
+        + "Terraform Titan: "
+        + Style.RESET_ALL
+        + "Ohh there you are... I hear you like DevOps? Whats your favourite tool? "
+    )
+    print(
+        Fore.BLUE
+        + "Terraform Titan: "
+        + Style.RESET_ALL
+        + "I see.. welcome to.. *drum roll please*.. "
+    )
     # time.sleep(2)
     print(title(word))
     hidden_word, masked_word = get_word(word)
@@ -40,7 +49,6 @@ def get_word(word):
                 words.append(result["word"])
     hidden_word = random.choice(words)
     return (hidden_word, len(hidden_word) * "_")
-
 
 
 def draw_man(guesses):

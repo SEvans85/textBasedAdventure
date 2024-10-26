@@ -1,7 +1,6 @@
-
 # Hero class with shared attributes
 class Hero:
-    def __init__(self,name, special):
+    def __init__(self, name, special):
         if not name:
             raise ValueError("Please enter a name")
         self.name = name
@@ -13,12 +12,14 @@ class Hero:
         return f"I am a hero, my name is {self.name}"
 
     def special_move(self):
-        return f"{self.name} unleashes their special move! \n\t~~-->>{self.special}<<--~~"
+        return (
+            f"{self.name} unleashes their special move! \n\t~~-->>{self.special}<<--~~"
+        )
 
-    def backpack(self):
-        ...
+    def backpack(self): ...
 
-#Mage inherits from Hero, with added functionality
+
+# Mage inherits from Hero, with added functionality
 class Mage(Hero):
     def __init__(self, name, special):
         super().__init__(name, special)
@@ -27,7 +28,7 @@ class Mage(Hero):
         return f"{self.name} stands tall, throwing magic missles in all directions."
 
 
-#Warrior inherits from Hero, with added functioality
+# Warrior inherits from Hero, with added functioality
 class Warrior(Hero):
     def __init__(self, name, special):
         super().__init__(name, special)
