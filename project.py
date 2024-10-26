@@ -14,6 +14,7 @@ from heros import Hero, Mage, Warrior
 from colorama import Fore, Back, Style
 import random
 import time
+from jenkins_jester import jenkins_response
 
 # print(Fore.RED + 'some red text')
 # print(Back.GREEN + 'and with a green background')
@@ -27,8 +28,9 @@ def main():
     my_hero = build_hero(
         name=my_hero["name"], hero=my_hero["hero"], special=my_hero["special"]
     )
+    time.sleep(1)
     print(my_hero)
-    print(my_hero.special_move())
+    print(my_hero.special_move(), "\n")
     print(
         Fore.RED
         + "Jenkins Jester: "
@@ -84,45 +86,7 @@ def roll_dice():
     )
 
 
-def jenkins_response(value):
-    # WORK NEEDED - ADD IN QUOTES FOR DIFFERENT SCORES, FIX SCORE NUMBER IN ASCII,
-    print(jesterart(value))
-    response = {
-        5: [
-            "A perfect 5! Well i doubt you will be so lucky next time!",
-            "LOL GOOD ONE",
-            "NICEEE",
-        ],
-        4: ["Theres always room for improvement.."],
-        3: ["Average.. thats what you are little one.. distinctly average!"],
-        2: ["YOU SCORED 2"],
-        1: ["YOU SCORED 1"],
-        0: ["Thats just pathetic", "Oh dear, oh dear.. not good"],
-    }
-    # more options needed
-    if value > 3:
-        print(
-            Fore.RED + "Jenkins Jester: " + Style.RESET_ALL + "heHeheHe.. You're good!"
-        )
-        print(
-            Fore.RED
-            + "Jenkins Jester: "
-            + Style.RESET_ALL
-            + random.choice(response[value])
-        )
-    else:
-        print(
-            Fore.RED
-            + "Jenkins Jester: "
-            + Style.RESET_ALL
-            + "uhh ohh, you're in trouble!!"
-        )
-        print(
-            Fore.RED
-            + "Jenkins Jester: "
-            + Style.RESET_ALL
-            + random.choice(response[value])
-        )
+
 
 
 def choose_your_destiny():
@@ -140,9 +104,10 @@ def choose_your_destiny():
     side_by_side_hero(warart(), magart())
     hero = ""
     while hero not in ["mage", "warrior"]:
-        hero = input(f"Please choose your hero: ").lower().strip()
+        hero = input(f"Please choose your hero (Warrior or Mage): ").lower().strip()
     print(f"You chose {hero.title()}")
     special = input(f"What is your special skill {name}? ")
+    print(f"Ohh yes... i like it! good choice hero!\n")
     # add this special to class?
     return {"name": name, "hero": hero, "special": special}
 
