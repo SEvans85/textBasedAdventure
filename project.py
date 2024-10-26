@@ -14,7 +14,7 @@ from heros import Hero, Mage, Warrior
 from colorama import Fore, Back, Style
 import random
 import time
-from jenkins_jester import jenkins_response
+from jenkins_jester import jenkins_response, jenkins_says
 
 # print(Fore.RED + 'some red text')
 # print(Back.GREEN + 'and with a green background')
@@ -22,28 +22,27 @@ from jenkins_jester import jenkins_response
 
 
 def main():
+    print(jenkins_says("Hello"))
     title = "Devops Dungeon"
     print(game_title(title))
-    my_hero = choose_your_destiny()
+    my_hero, roll = game_setup()
     my_hero = build_hero(
         name=my_hero["name"], hero=my_hero["hero"], special=my_hero["special"]
     )
     time.sleep(1)
     print(my_hero)
     print(my_hero.special_move(), "\n")
+    jenkins_says("HELLOLOOOO")
     print(
-        Fore.RED
-        + "Jenkins Jester: "
-        + Style.RESET_ALL
-        + "OK Okay! Well roll the dice then, lets see what grusome mystery awaits you!"
+        jenkins_says(
+            "OK Okay! Well roll the dice then, lets see what grusome mystery awaits you!"
+        )
     )
     print(
-        Fore.RED
-        + "Jenkins Jester: "
-        + Style.RESET_ALL
-        + "Im waiting.. if you're ready to meet your doom just 'roll' the dice."
+        jenkins_says(
+            "Im waiting.. if you're ready to meet your doom just 'roll' the dice."
+        )
     )
-    roll = ""
     while roll != "roll":
         roll = input(">>")
     print(roll_dice())
@@ -86,10 +85,7 @@ def roll_dice():
     )
 
 
-
-
-
-def choose_your_destiny():
+def game_setup():
     name = ""
     while not name:
         name = input("What is your name young hero? ").strip().title()
@@ -108,8 +104,8 @@ def choose_your_destiny():
     print(f"You chose {hero.title()}")
     special = input(f"What is your special skill {name}? ")
     print(f"Ohh yes... i like it! good choice hero!\n")
-    # add this special to class?
-    return {"name": name, "hero": hero, "special": special}
+    # return name of hero, which hero the player chose and empty string to initialise roll= ""
+    return ({"name": name, "hero": hero, "special": special}, "")
 
 
 def build_hero(name, hero, special):

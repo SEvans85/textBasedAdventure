@@ -1,3 +1,8 @@
+import random
+from colorama import Fore, Back, Style
+from asciiart import jesterart
+
+
 def jenkins_response(value):
     # WORK NEEDED - ADD IN QUOTES FOR DIFFERENT SCORES, FIX SCORE NUMBER IN ASCII,
     print(jesterart(value))
@@ -37,3 +42,7 @@ def jenkins_response(value):
             + Style.RESET_ALL
             + random.choice(response[value])
         )
+
+
+def jenkins_says(phrase):
+    return Fore.RED + "Jenkins Jester: " + Style.RESET_ALL + f"{phrase}"
