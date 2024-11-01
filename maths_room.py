@@ -78,6 +78,7 @@ def get_level(levels):
         level = input(
             Fore.GREEN + "Git Goblin: " + Style.RESET_ALL + "So what is it to be? "
         )
+        level = input(my_hero.input())
     return level
 
 
@@ -114,3 +115,5 @@ def calculate_answer(question):
             return ans_x // ans_y
         case _:
             return "No valid operator found"
+
+#
