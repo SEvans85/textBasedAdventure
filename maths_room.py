@@ -107,13 +107,17 @@ def calculate_answer(question):
     match ans_op:
         case "%":
             return ans_x % ans_y
+
         case "*":
             return ans_x * ans_y
         case "+":
+
             return ans_x + ans_y
         case "//":
             return ans_x // ans_y
+
         case _:
             return "No valid operator found"
+
 
 ##test
