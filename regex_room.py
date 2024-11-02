@@ -5,7 +5,9 @@ def regex_room():
     questions = get_questions()
 
     for question in questions:
-        print(f"Which piece of text does this pattern match in Regex? {question["pattern"]}")
+        print(
+            f"Which piece of text does this pattern match in Regex? {question['pattern']}"
+        )
         for options in question["options"].items():
             for op, option in options:
                 print
@@ -16,34 +18,18 @@ def regex_room():
             print("WRONG!")
 
 
-
-
-
-
 def get_questions():
     questions = [
         {
             "pattern": "^k.{5}t",
             "answer": "a",
-            "options": {
-                "a": "kubernetes",
-                "b": "kubectl",
-                "c": "kubelet" #answer
-            }
-            
-
+            "options": {"a": "kubernetes", "b": "kubectl", "c": "kubelet"},  # answer
         },
         {
             "pattern": "(.{3})( )([a-z]{3})",
             "answer": "b",
-            "options": {
-                "a": "git addg",
-                "b": "git commit",
-                "c": "git push"
-                }
-
-        }
+            "options": {"a": "git addg", "b": "git commit", "c": "git push"},
+        },
     ]
-    
-    return questions 
 
+    return questions
