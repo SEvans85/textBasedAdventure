@@ -103,15 +103,12 @@ def calculate_answer(question):
     ans_x, ans_op, ans_y = question.split(" ")
     ans_x = int(ans_x)
     ans_y = int(ans_y)
-
     match ans_op:
         case "%":
             return ans_x % ans_y
-
         case "*":
             return ans_x * ans_y
         case "+":
-
             return ans_x + ans_y
         case "//":
             return ans_x // ans_y
