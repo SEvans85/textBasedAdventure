@@ -13,8 +13,6 @@ from jenkins_jester import jenkins_response, jenkins_says
 from regex_room import regex_room
 
 
-
-
 def main():
     print(regex_room())
 
@@ -100,7 +98,7 @@ def game_setup():
     # return name of hero, which hero the player chose and empty string to initialise roll= ""
     # input_name = print(my_hero.__class__.__name__)
     return ({"name": name, "hero": hero, "special": special}, "")
- 
+
 
 def build_hero(name, hero, special):
     match hero:
