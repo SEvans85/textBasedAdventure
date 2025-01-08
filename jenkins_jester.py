@@ -44,5 +44,5 @@ def jenkins_response(value):
     )
 
 
-def jenkins_says(phrase):
+def jenkins(phrase):
     return Fore.RED + "Jenkins Jester: " + Style.RESET_ALL + f"{phrase}"

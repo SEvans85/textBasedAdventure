@@ -29,9 +29,13 @@ class Mage(Hero):
 
     def taunt(self):
         return f"{self.name} stands tall, throwing magic missles in all directions."
+    
 
 
 # Warrior inherits from Hero, with added functioality
 class Warrior(Hero):
     def __init__(self, name, special):
         super().__init__(name, special)
+
+    def showoff(self):
+        return f"{self.name} swings their sword ferociously."
