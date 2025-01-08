@@ -5,7 +5,7 @@ from pyfiglet import Figlet
 from colorama import Fore, Back, Style
 import time
 
-# logic for revealing letters: pass in idden work, return word with "_" for letter than isnt matching then letter for matching
+# logic for revealing letters: pass in hidden work, return word with "_" for letter than isnt matching then letter for matching
 
 
 def hangman_room():

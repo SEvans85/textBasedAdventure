@@ -13,7 +13,10 @@ def not_wordle_room():
             Fore.YELLOW
             + "YAML Yeti: "
             + Style.RESET_ALL
-            + "Give me a 5 letter word and we will see if you have any matches! "
+            + "Give me a 5 letter word and we will see if you have any matches!"
+            + "If the letter is in the correct place you will be able to see it"
+            + "Ff the letter is in the word but in the wrong place, you will see a ?"
+            + "If the letter does not exist in the word, you will see a +"
             + "\n>>"
         ).lower()
         word = guess_word(guess, word_to_guess)
@@ -35,7 +38,7 @@ def not_wordle_room():
             Fore.YELLOW
             + "YAML Yeti: "
             + Style.RESET_ALL
-            + f"You have {5 - guesses} guesses left. "
+            + f"You guessed {guess}. You have {5 - guesses} guesses left. "
         )
     return calculate_score(guesses)
 
@@ -56,17 +59,17 @@ def guess_word(word, word_to_guess):
             + Style.RESET_ALL
             + f"Please enter a 5 letter word. YOU LOSE AGO FOR YOUR SILLY MISTAKE."
         )
-        return word
+        return "+ + + + +"
     word_to_return = ""
     print(word, "guess")
     print(word_to_guess, "word to guess")
     for i, value in enumerate(word):
         if value == word_to_guess[i]:
-            word_to_return += value
+            word_to_return += value + " "
         elif value in word_to_guess:
-            word_to_return += "?"
+            word_to_return += "? "
         else:
-            word_to_return += "X"
+            word_to_return += "+ "
     return word_to_return
 
 
@@ -76,7 +79,7 @@ def wordle_setup():
         Fore.YELLOW
         + "YAML Yeti: "
         + Style.RESET_ALL
-        + "Welcome to the not wordle game. "
+        + "Welcome to the NOT Wordle game. "
     )
     guesses = 0
     return (word_to_guess, guesses)

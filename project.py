@@ -11,12 +11,12 @@ import random
 import time
 from jenkins_jester import jenkins_response, jenkins_says
 from regex_room import regex_room
+from hangman_room import hangman_room
 
 
 
 
 def main():
-    #print(regex_room())
 
     print(jenkins_says("Hello"))
     title = "Devops Dungeon"
