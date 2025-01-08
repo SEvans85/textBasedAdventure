@@ -12,30 +12,10 @@ def maths_room():
     }
 
     score = 0
-    print(
-        Fore.GREEN
-        + "Git Goblin: "
-        + Style.RESET_ALL
-        + "mwuahahahahahaah.. fresh meat.."
-    )
-    print(
-        Fore.GREEN
-        + "Git Goblin: "
-        + Style.RESET_ALL
-        + "Are you ready to challenge the Git Goblin?"
-    )
-    print(
-        Fore.GREEN
-        + "Git Goblin: "
-        + Style.RESET_ALL
-        + "I'll give you a chance.. you can choose how difficult you want my little game to be, how doe's that sound?"
-    )
-    print(
-        Fore.GREEN
-        + "Git Goblin: "
-        + Style.RESET_ALL
-        + "Just give me a number between 1 and 5, 5 being the hardest.. and well.. i'll do the reset.. hurry now!"
-    )
+    print(goblin("mwuahahahahahaah.. fresh meat.."))
+    print(goblin("Are you ready to challenge the Git Goblin?"))
+    print(goblin("I'll give you a chance.. you can choose how difficult you want my little game to be, how doe's that sound?"))
+    print(goblin("Just give me a number between 1 and 5, 5 being the hardest.. and well.. i'll do the reset.. hurry now!"))
 
     level = get_level(levels)
     total_questions = 5
@@ -47,27 +27,13 @@ def maths_room():
         if int(user_answer == actual_answer):
             score += 1
     if score >= 3:
-        print(
-            Fore.GREEN
-            + "Git Goblin: "
-            + Style.RESET_ALL
-            + "Hmmm.. not bad i guess.. lets see what the Jester as to say about all this.."
-        )
-        print(
-            Fore.GREEN
-            + "Git Goblin: "
-            + Style.RESET_ALL
-            + "Well.. what are you waiting for.. get out of here before i change my mind!"
-        )
+        print(goblin("Hmmm.. not bad i guess.. lets see what the Jester as to say about all this.."))
+        print(goblin("Well.. what are you waiting for.. get out of here before i change my mind!"))    
     else:
-        print(
-            Fore.GREEN
-            + "Git Goblin: "
-            + Style.RESET_ALL
-            + "Oh boy, you're in trouble.. The Jester want's a little word with you.."
-        )
+        print(goblin("Oh boy, you're in trouble.. The Jester want's a little word with you.."))
         print(score)
-    print("**The goblin kicks you out..**")
+
+    print("**The Goblin kicks you out..**")
     print("TOTAL SCORE: ", score)
     return score
 
@@ -115,4 +81,9 @@ def calculate_answer(question):
 
         case _:
             return "No valid operator found"
+
+
+def goblin(phrase):
+    return Fore.GREEN + "Git Goblin: " + Style.RESET_ALL + f"{phrase}"
+
 

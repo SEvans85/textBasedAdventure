@@ -12,51 +12,52 @@ import time
 from jenkins_jester import jenkins_response, jenkins_says
 from regex_room import regex_room
 from hangman_room import hangman_room
+from final_room import final_room
 
 
 
 
 def main():
-
-    print(jenkins_says("Hello"))
-    title = "Devops Dungeon"
-    print(game_title(title))
-    my_hero, roll = game_setup()
-    my_hero = build_hero(
-        name=my_hero["name"], hero=my_hero["hero"], special=my_hero["special"]
-    )
-    time.sleep(1)
-    print(my_hero)
-    print(my_hero.special_move(), "\n")
-    print(
-        jenkins_says(
-            "OK Okay! Well roll the dice then, lets see what grusome mystery awaits you!"
-        )
-    )
-    print(
-        jenkins_says(
-            "Im waiting.. if you're ready to meet your doom just 'roll' the dice."
-        )
-    )
-    while roll != "roll":
-        roll = input(my_hero.input())
-    print(roll_dice())
-    time.sleep(1)
-    maths_score = maths_room()
-    jenkins_response(maths_score)
-    print(
-        Fore.RED
-        + "Jenkins Jester: "
-        + Style.RESET_ALL
-        + "Im waiting.. if you're ready to meet your doom just 'roll' the dice."
-    )
-    roll = ""
-    while roll != "roll":
-        roll = input(my_hero.input())
-    print(roll_dice())
-    time.sleep(1)
-    wordle_score = not_wordle_room()
-    jenkins_response(wordle_score)
+    print(maths_room())
+    # print(jenkins_says("Hello"))
+    # title = "Devops Dungeon"
+    # print(game_title(title))
+    # my_hero, roll = game_setup()
+    # my_hero = build_hero(
+    #     name=my_hero["name"], hero=my_hero["hero"], special=my_hero["special"]
+    # )
+    # time.sleep(1)
+    # print(my_hero)
+    # print(my_hero.special_move(), "\n")
+    # print(
+    #     jenkins_says(
+    #         "OK Okay! Well roll the dice then, lets see what grusome mystery awaits you!"
+    #     )
+    # )
+    # print(
+    #     jenkins_says(
+    #         "Im waiting.. if you're ready to meet your doom just 'roll' the dice."
+    #     )
+    # )
+    # while roll != "roll":
+    #     roll = input(my_hero.input())
+    # print(roll_dice())
+    # time.sleep(1)
+    # maths_score = maths_room()
+    # jenkins_response(maths_score)
+    # print(
+    #     Fore.RED
+    #     + "Jenkins Jester: "
+    #     + Style.RESET_ALL
+    #     + "Im waiting.. if you're ready to meet your doom just 'roll' the dice."
+    # )
+    # roll = ""
+    # while roll != "roll":
+    #     roll = input(my_hero.input())
+    # print(roll_dice())
+    # time.sleep(1)
+    # wordle_score = not_wordle_room()
+    # jenkins_response(wordle_score)
 
 
 def roll_dice():
