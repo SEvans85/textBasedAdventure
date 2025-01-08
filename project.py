@@ -18,7 +18,7 @@ from final_room import final_room
 
 
 def main():
-    print(maths_room())
+    print(not_wordle_room())
     # print(jenkins_says("Hello"))
     # title = "Devops Dungeon"
     # print(game_title(title))
